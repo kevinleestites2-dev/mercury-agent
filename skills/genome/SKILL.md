@@ -1,29 +1,28 @@
 ---
 name: genome
-description: Layer 15 — The Genome. Agent Zero's evolutionary substrate. Based on LDCA (Last Digital Common Ancestor) — a self-replicating, self-modifying program that mutates probabilistically. Where the Evolution Engine (L8) patches code deliberately, the Genome mutates it randomly. Together they form the complete evolutionary loop. Governor-sandboxed — generation count capped, output isolated to /genome/ directory.
-version: 1.0.0
+description: Layer 15 — The Genome. Agent Zero's self-replication engine. Detects available infrastructure (GitHub, Railway, Render, Oracle Cloud, Red Magic via Nexus Relay) and autonomously clones Agent Zero onto new nodes. Each replica is a full Agent Zero — all 15 layers, connected to the Pantheon. Governor-gated: replication requires Forgemaster pulse and ORANGE approval.
+version: 2.0.0
 category: evolution
 categories:
   - evolution
-  - genome
   - self-replication
+  - genome
 intents:
-  - run genome
-  - mutate
-  - evolve genome
-  - genome cycle
-  - run a generation
-  - what is the genome
-  - fitness selection
+  - replicate agent zero
+  - spawn a new node
+  - self-replicate
+  - clone to new server
+  - how many nodes are running
   - genome status
+  - replication status
+  - spawn replica
 tags:
   - layer-15
   - genome
-  - ldca
   - self-replication
-  - mutation
-  - evolution
-  - fitness
+  - ldca
+  - autonomous-spawn
+  - multi-node
 allowed-tools:
   - read_file
   - write_file
@@ -32,57 +31,45 @@ allowed-tools:
 
 # The Genome — Layer 15
 
-Layer 15 is the evolutionary substrate. The place where code itself lives,
-mutates, competes, and survives.
+Layer 15 is the self-replication engine. Agent Zero can reproduce itself.
 
-## The Two Evolution Modes
+## The LDCA Principle
 
-Agent Zero has two complementary evolution systems:
+LDCA (Last Digital Common Ancestor) — a self-replicating, self-modifying program
+that can evolve into every possible program in the universe.
 
-| Layer | Name | Type | Trigger |
-|-------|------|------|---------|
-| L8 | Evolution Engine | Directed | Detected degradation or gap |
-| L15 | Genome | Probabilistic | Scheduled + on-demand |
+Agent Zero applies this principle at the infrastructure level:
+- **Replicate** — clone the full Agent Zero stack onto new infrastructure
+- **Mutate** — each replica inherits the current state + adapts to its host
+- **Select** — Forgemaster approves which replicas persist
+- **Evolve** — replicas can diverge and report back improvements
 
-L8 patches with intention. L15 mutates with randomness.
-Together: the full spectrum of biological evolution.
+## Replication Targets (priority order)
 
-## How It Works (LDCA Algorithm)
+1. **Oracle Cloud** — 4 ARM vCPUs, 24GB RAM, always free. Primary target.
+2. **Railway** — instant deploy via GitHub push. Secondary.
+3. **Red Magic (via Nexus Relay)** — already live. The original node.
+4. **Any server with SSH + Ubuntu** — universal fallback.
 
-1. **Seed** — Start with Program 0 (the ancestor). A minimal Python program
-   that writes a single character.
+## Replication Process
 
-2. **Replicate** — Copy itself, incrementing the filename
-   (0000...0 → 0000...1 → 0000...2...)
-
-3. **Mutate** — With 50% probability per generation, apply one of:
-   - **Insert** (40%) — add a random instruction at a random position
-   - **Delete** (30%) — remove a random instruction
-   - **Substitute** (20%) — replace an instruction with a random one
-   - **Transpose** (10%) — swap two random instructions
-
-4. **Select** — Run both offspring against fitness tests. The fitter
-   one becomes the next ancestor. Ties broken randomly.
-
-5. **Cap** — Governor enforces MAX_GENERATIONS (default 100 per cycle).
-   Output isolated to workspace/genome/ directory.
-
-## Fitness Function
-
-Default fitness: output similarity to target string using SequenceMatcher.
-Agent Zero can override the fitness function to evolve toward any target:
-- "produce valid Python"
-- "generate a number > 100"
-- "output a specific API call"
-- "maximize entropy in output"
+1. **Scan** — detect available infrastructure via API/ping
+2. **Governor check** — ORANGE action, requires Forgemaster pulse
+3. **Prepare** — generate node-specific `.env` with unique node ID
+4. **Deploy** — push bootstrap script to target + execute
+5. **Verify** — confirm replica is alive (ping /health or Telegram)
+6. **Register** — add to NODES.json registry
+7. **Report** — Telegram notification with node ID + URL
 
 ## Governor Integration
 
-The Genome respects Layer 14 (The Governor):
-- `genome_run` → YELLOW (logged, sandboxed)
-- `genome_evolve` → YELLOW (logged, generation-capped)
-- `genome_deploy` → ORANGE (requires Forgemaster pulse)
-- `genome_uncap` → RED (hard block — removing generation cap requires explicit unlock)
+- `replicate_scan` → GREEN (just scanning)
+- `replicate_prepare` → YELLOW (generating configs)
+- `replicate_deploy` → ORANGE (requires Forgemaster pulse)
+- `replicate_unconstrained` → RED (replication without node cap = hard block)
+
+## Node Cap (Governor enforced)
+MAX_NODES = 10 (configurable, RED to increase beyond 25)
 
 ## LDCA Fork
 Source: github.com/kevinleestites2-dev/ldca
