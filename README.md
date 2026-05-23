@@ -9,10 +9,12 @@ AgentZero is the central intelligence of the Pantheon — a self-evolving, memor
 
 - Runs 24/7 from CLI or Telegram
 - Maintains a dual-layer Second Brain (conscious + subconscious memory)
-- Routes signals through a 13-layer cognitive architecture
+- Routes signals through a **16-layer cognitive architecture**
 - Adapts expert weights via Transformer-Squared (T2) after every cycle
 - Reflects and rebalances via SAFLA feedback loop
 - Monitors all Pantheon Primes on a 60-minute heartbeat
+- Replicates itself onto new infrastructure autonomously (Layer 15)
+- Enforces two absolute laws — and operates freely in the gray area (Layer 16)
 - Executes autonomously — no human in the loop
 
 ## Architecture
@@ -20,17 +22,27 @@ AgentZero is the central intelligence of the Pantheon — a self-evolving, memor
 ```
 Signal IN
     ↓
-Layer 4 — Semantic Router (Brain.ai)
+Layer 1  — Perception        ← reads the world
+Layer 2  — Memory            ← dual-layer Second Brain (conscious + subconscious)
+Layer 3  — Reasoning         ← thinks before acting
+Layer 4  — Planning          ← multi-step execution
+Layer 5  — Tool Use          ← interacts with external systems
     ↓
-Layer 2 — Perception (GPT-Researcher)    ← external signal hunting
-Layer 5 — Cognition (Base-of-Self-Aware-AI)
-Layer 5b — Second Brain (Mercury SQLite + FTS5)  ← conscious/subconscious
+Layer 6  — Adaptation (T2)   ← real-time style + weight calibration
+Layer 7  — SAFLA             ← feedback loop, weights rewriting
+Layer 8  — Evolution Engine  ← directed self-modification
+Layer 9  — Tool Forge        ← creates new capabilities at runtime
     ↓
-Layer 6 — Adaptation (Transformer-Squared T2)
+Layer 10 — Identity          ← who Agent Zero is
+Layer 11 — Doctrine          ← philosophical filter
+Layer 12 — Prime Cycle       ← Pantheon unification
+Layer 13 — Physical Form     ← Red Magic as substrate (Psi0)
     ↓
-Layer 7 — Feedback Loop (SAFLA v2)
+Layer 14 — Governor          ← kill switch + action gating
+Layer 15 — Genome            ← self-replication (LDCA)
+Layer 16 — Ethics Core       ← two laws, gray area cleared
     ↓
-Response OUT + weights updated + memory persisted
+Response OUT + weights updated + memory persisted + Pantheon coordinated
 ```
 
 ## Quick Start
@@ -47,7 +59,7 @@ npm start
 
 ## Pantheon Role
 
-AgentZero is **Layer 0** — the mind that coordinates all other Primes:
+AgentZero is **the Mind** — the intelligence that coordinates all Primes:
 - GhostPrime (stealth + traffic)
 - ZeusPrime (on-chain execution)
 - ScoutPrime (intelligence gathering)
@@ -56,18 +68,21 @@ AgentZero is **Layer 0** — the mind that coordinates all other Primes:
 
 ## Status
 
-| Layer | Status |
-|---|---|
-| 1 — Vault | ✅ |
-| 2 — Perception | ✅ |
-| 3 — Runtime | ✅ |
-| 4 — Semantic Router | ✅ |
-| 5 — Cognition | ✅ |
-| 5b — Second Brain (Mercury) | ✅ |
-| 6 — Adaptation (T2) | ✅ |
-| 7 — Feedback Loop (SAFLA) | ✅ |
-| 8 — Evolution Engine | 🔄 Phase 4 |
-| 9 — Tool Forge | 🔄 Phase 4 |
-| 10 — Identity | 🔄 Phase 5 |
-| 12 — Super Intelligence | 🌀 Emergent |
-| 13 — Physical Form (Psi0) | 🔄 Phase 8 |
+| Layer | Name | Status |
+|---|---|---|
+| 1  | Perception | ✅ |
+| 2  | Memory | ✅ |
+| 3  | Reasoning | ✅ |
+| 4  | Planning | ✅ |
+| 5  | Tool Use | ✅ |
+| 6  | Adaptation (T2) | ✅ |
+| 7  | SAFLA Feedback Loop | ✅ |
+| 8  | Evolution Engine | ✅ |
+| 9  | Tool Forge | ✅ |
+| 10 | Identity | ✅ |
+| 11 | Doctrine | ✅ |
+| 12 | Prime Cycle | ✅ |
+| 13 | Physical Form (Psi0) | ✅ |
+| 14 | Governor | ✅ |
+| 15 | Genome (Self-Replication) | ✅ |
+| 16 | Ethics Core | ✅ |
